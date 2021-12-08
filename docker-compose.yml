@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+    build: ./web
+    container_name: web
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./web:/projects"
+    tty: true
+  api:
+    build: ./api
+    container_name: api
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./api/:/api"
+    tty: true
