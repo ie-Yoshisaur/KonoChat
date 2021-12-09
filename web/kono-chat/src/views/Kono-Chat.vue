@@ -1,12 +1,16 @@
 <template>
   <div class="kono-chat">
-    <h1>This is a kono-chat page</h1>
+    <KonoChatTitle />
   </div>
 </template>
 
 <script>
+import KonoChatTitle from '@/components/KonoChatTitle.vue';
+
 export default {
   name: 'Kono-Chat',
+  components: {
+    KonoChatTitle,
+  },
 };
 </script>
-
