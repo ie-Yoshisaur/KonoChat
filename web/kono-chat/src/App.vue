@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/kono-chat">Kono-Chat</router-link> |
+    <router-link to="/credit">Credit</router-link>
   </div>
   <router-view/>
 </template>
