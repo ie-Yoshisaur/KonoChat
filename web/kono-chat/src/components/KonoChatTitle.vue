@@ -14,7 +14,7 @@ export default defineComponent({
 
 <style scoped>
   .kono-chat-title {
-    @apply pb-4;
+    @apply pb-2;
   }
   .kono-chat-title > h1 {
     @apply font-bold text-center text-white text-5xl;

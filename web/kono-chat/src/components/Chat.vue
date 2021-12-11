@@ -2,7 +2,11 @@
   <div class="chat">
     <div class="message-list">
     </div>
-    <div class="send-button">
+    <div class="send-message">
+      <input class="send-input">
+      <button class="send-button">
+        <font>Send</font>
+      </button>
     </div>
   </div>
 </template>
@@ -20,9 +24,17 @@ export default defineComponent({
     @apply h-full w-full;
   }
   .message-list {
-    @apply h-full w-5/6 bg-gray-700 container mx-auto;
+    @apply overflow-auto h-full w-5/6 container mx-auto
+           border-white border-t-4 border-r-4 border-b-2 border-l-4 rounded-t-lg;
+  }
+  .send-message {
+    @apply h-12 w-5/6 flex items-center justify-around container mx-auto
+           border-white border-t-2 border-r-4 border-b-4 border-l-4 rounded-b-2xl;
+  }
+  .send-input {
+    @apply w-4/6 h-full border-r-4 border-l-4 text-center text-white bg-gray-900;
   }
   .send-button {
-    @apply h-10 w-5/6 bg-gray-100 container mx-auto;
+    @apply w-1/6 h-full border-r-4 border-l-4 text-white font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl;
   }
 </style>
