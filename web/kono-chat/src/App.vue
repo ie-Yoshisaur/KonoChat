@@ -36,6 +36,6 @@
 }
 
 .nav {
-  @apply h-1/6;
+  @apply h-20;
 }
 </style>

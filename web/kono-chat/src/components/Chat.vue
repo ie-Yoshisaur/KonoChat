@@ -2,6 +2,8 @@
   <div class="chat">
     <div class="message-list">
     </div>
+    <div class="send-button">
+    </div>
   </div>
 </template>
 
@@ -15,8 +17,12 @@ export default defineComponent({
 
 <style scoped>
   .chat {
-    @apply h-5/6 w-5/6 container mx-auto bg-gray-700;
+    @apply h-full w-full;
   }
   .message-list {
+    @apply h-full w-5/6 bg-gray-700 container mx-auto;
+  }
+  .send-button {
+    @apply h-10 w-5/6 bg-gray-100 container mx-auto;
   }
 </style>
