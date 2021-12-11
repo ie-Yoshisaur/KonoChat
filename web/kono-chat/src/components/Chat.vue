@@ -3,7 +3,7 @@
     <div class="message-list">
     </div>
     <div class="send-message">
-      <input class="send-input">
+      <input class="send-input" placeholder="Please input the sentence that you want to send to Kono-Sensei">
       <button class="send-button">
         <font>Send</font>
       </button>
@@ -35,6 +35,6 @@ export default defineComponent({
     @apply w-4/6 h-full border-r-4 border-l-4 text-center text-white bg-gray-900;
   }
   .send-button {
-    @apply w-1/6 h-full border-r-4 border-l-4 text-white font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl;
+    @apply w-1/6 h-full border-r-4 border-l-4 text-white font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-gray-800;
   }
 </style>
