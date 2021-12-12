@@ -1,5 +1,5 @@
 interface Message {
-  senderId : number,
+  sender : string,
   message : stirng,
 }
 

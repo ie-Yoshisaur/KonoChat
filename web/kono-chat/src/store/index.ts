@@ -11,11 +11,11 @@ export const store = createStore({
   mutations: {
     /* eslint no-shadow: ["error", { "allow": ["state"] }] */
     addUserMessage(state: State, message: string) {
-      state.messageList.push({ senderId: 0, message });
+      state.messageList.push({ sender: 'You', message });
     },
     /* eslint no-shadow: ["error", { "allow": ["state"] }] */
     addKonoMessage(state: State, message: string) {
-      state.messageList.push({ senderId: 1, message });
+      state.messageList.push({ sender: 'Kono', message });
     },
   },
   actions: {
