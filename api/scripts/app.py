@@ -1,16 +1,12 @@
 from flask import Flask, jsonify
+from flask import request
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
-@app.route('/')
-def home():
-    message = "HOME"
-    return jsonify({'message': message})
-
-@app.route('/Hello-World')
-def hello_world():
-    message = "Hello, World!"
+@app.route('/test', methods=['POST'])
+def test():
+    message = request.json['message']
     return jsonify({'message': message})
 
 if __name__ == "__main__":

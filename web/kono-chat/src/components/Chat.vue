@@ -21,7 +21,7 @@ export default defineComponent({
     const store = useStore();
 
     const buttonAction = () => {
-      store.dispatch('getKonoMessage', 'Hello-World');
+      store.dispatch('getKonoMessage', { route: 'test', message: 'Hello, World!' });
       alert(store.getters.messageList[0].message);
     };
 
