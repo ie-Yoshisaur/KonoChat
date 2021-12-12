@@ -2,12 +2,18 @@
   <div class="chat">
     <div class="message-list">
       <template v-for="n in store.getters.messageList.length" :key="n">
-        <p> {{ store.getters.messageList[n - 1].sender }} </p>
-        <p> {{ store.getters.messageList[n - 1].message }} </p>
+        <div class="sender">
+          <p> {{ store.getters.messageList[n - 1].sender }} </p>
+        </div>
+        <div class="message">
+          <p> {{ store.getters.messageList[n - 1].message }} </p>
+        </div>
       </template>
     </div>
     <div class="send-message">
-      <input v-model="messageToSend" class="send-input" placeholder="Please enter the text you want to send to Kono-Sensei">
+      <input v-model="messageToSend"
+             class="send-input"
+             placeholder="Please enter the text you want to send to Kono-Sensei">
       <button v-on:click='buttonAction' class="send-button">
         <font>Send</font>
       </button>
@@ -45,6 +51,18 @@ export default defineComponent({
     @apply overflow-auto h-full w-5/6 container mx-auto
            border-white border-t-4 border-r-4 border-b-2 border-l-4 rounded-t-lg;
   }
+  .sender {
+    @apply flex justify-start;
+  }
+  .sender > p {
+    @apply pt-2 pl-2 text-left text-white;
+  }
+  .message {
+    @apply flex justify-start;
+  }
+  .message > p {
+    @apply p-2 max-w-full inline-flex bg-white text-black break-all text-left rounded-tl-sm rounded-tr-2xl rounded-bl-2xl rounded-br-2xl;
+  }
   .send-message {
     @apply h-12 w-5/6 flex justify-around container mx-auto
            border-white border-t-2 border-r-4 border-b-4 border-l-4 rounded-b-2xl;
@@ -53,6 +71,7 @@ export default defineComponent({
     @apply w-4/6 h-full border-r-4 border-l-4 text-center text-white bg-gray-900;
   }
   .send-button {
-    @apply w-1/6 h-full border-r-4 border-l-4 text-white font-bold sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-gray-800;
+    @apply w-1/6 h-full border-r-4 border-l-4 text-white font-bold
+           sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-gray-800;
   }
 </style>
