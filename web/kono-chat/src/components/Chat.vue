@@ -2,6 +2,7 @@
   <div class="chat">
     <div class="message-list">
       <template v-for="n in store.getters.messageList.length" :key="n">
+        <p> {{ store.getters.messageList[n - 1].sender }} </p>
         <p> {{ store.getters.messageList[n - 1].message }} </p>
       </template>
     </div>
@@ -25,7 +26,7 @@ export default defineComponent({
     const messageToSend = ref<string>('');
 
     const buttonAction = () => {
-      store.dispatch('addUserMessage', messageToSend.value );
+      store.dispatch('addUserMessage', messageToSend.value);
       store.dispatch('getKonoMessage', { route: 'test', message: 'Hello, World!' });
     };
 
