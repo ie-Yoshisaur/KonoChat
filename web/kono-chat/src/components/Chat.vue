@@ -34,7 +34,7 @@ export default defineComponent({
     const buttonAction = () => {
       if (messageToSend.value) {
         store.dispatch('addUserMessage', messageToSend.value);
-        store.dispatch('getKonoMessage', { route: 'test', message: 'Hello, World!' });
+        store.dispatch('getKonoMessage', { route: 'test', message: messageToSend.value });
       }
     };
 
