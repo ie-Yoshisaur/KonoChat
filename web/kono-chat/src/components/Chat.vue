@@ -1,6 +1,6 @@
 <template>
   <div class="chat">
-    <div class="message-list">
+    <div ref="messageList" class="message-list">
       <template v-for="n in store.getters.messageList.length" :key="n">
         <div v-bind:class="{'sender-kono': store.getters.messageList[n - 1].sender == 'Kono', 'sender-you': store.getters.messageList[n - 1].sender == 'You'}">
           <p> {{ store.getters.messageList[n - 1].sender }} </p>
@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onUpdated, nextTick, } from 'vue';
 import { useStore } from 'vuex';
 
 export default defineComponent({
@@ -31,6 +31,8 @@ export default defineComponent({
   setup() {
     const store = useStore();
     const messageToSend = ref<string>('');
+    const messageList = ref<HTMLImageElement>();
+    let messageListLength: number = 0;
 
     const buttonAction = () => {
       if (messageToSend.value) {
@@ -40,8 +42,18 @@ export default defineComponent({
       }
     };
 
+    onUpdated(() => {
+      nextTick(() => {
+        if (!messageList.value) return;
+        if (messageListLength.value != store.getters.messageList.length) {
+          messageListLength = store.getters.messageList.length;
+          messageList.value.scrollTop = messageList.value.scrollHeight;
+        }
+      });
+    });
+
     return {
-      store, messageToSend, buttonAction,
+      store, messageToSend, messageList, buttonAction,
     };
   },
 });
