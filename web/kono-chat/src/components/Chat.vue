@@ -75,14 +75,14 @@ export default defineComponent({
     @apply flex justify-start;
   }
   .message-kono > p {
-    @apply p-2 max-w-full inline-flex bg-white text-black break-all text-left rounded-tl-sm rounded-tr-2xl rounded-bl-2xl rounded-br-2xl;
+    @apply p-2 max-w-full inline-flex bg-gray-300 text-black break-all text-left rounded-tl-sm rounded-tr-2xl rounded-bl-2xl rounded-br-2xl;
   }
   .send-message {
     @apply h-12 w-5/6 flex justify-around container mx-auto
            border-white border-t-2 border-r-4 border-b-4 border-l-4 rounded-b-2xl;
   }
   .send-input {
-    @apply w-4/6 h-full border-r-4 border-l-4 text-center text-white bg-gray-900;
+    @apply w-4/6 h-full border-r-4 border-l-4 rounded-lg text-center text-white bg-gray-900;
   }
   .send-button {
     @apply w-1/6 h-full border-r-4 border-l-4 rounded-lg text-white font-bold
