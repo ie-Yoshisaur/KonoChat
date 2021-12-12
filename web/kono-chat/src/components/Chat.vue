@@ -12,7 +12,7 @@
     </div>
     <div class="send-message">
       <input v-model='messageToSend'
-             v-on:keydown.enter='buttonAction'
+             v-on:keypress.enter='buttonAction'
              class="send-input"
              placeholder="Type text.">
       <button v-on:click='buttonAction' class="send-button">
