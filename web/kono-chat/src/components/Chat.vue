@@ -2,10 +2,10 @@
   <div class="chat">
     <div class="message-list">
       <template v-for="n in store.getters.messageList.length" :key="n">
-        <div class="sender">
+        <div v-bind:class="{'sender-kono': store.getters.messageList[n - 1].sender == 'Kono', 'sender-you': store.getters.messageList[n - 1].sender == 'You'}">
           <p> {{ store.getters.messageList[n - 1].sender }} </p>
         </div>
-        <div class="message">
+        <div v-bind:class="{'message-kono': store.getters.messageList[n - 1].sender == 'Kono', 'message-you': store.getters.messageList[n - 1].sender == 'You'}">
           <p> {{ store.getters.messageList[n - 1].message }} </p>
         </div>
       </template>
@@ -53,16 +53,28 @@ export default defineComponent({
     @apply overflow-auto h-full w-5/6 container mx-auto
            border-white border-t-4 border-r-4 border-b-2 border-l-4 rounded-t-lg;
   }
-  .sender {
+  .sender-you {
+    @apply flex justify-end;
+  }
+  .sender-you > p {
+    @apply pt-2 pr-2 text-left text-white;
+  }
+  .message-you {
+    @apply flex justify-end;
+  }
+  .message-you > p {
+    @apply p-2 max-w-full inline-flex bg-white text-black break-all text-left rounded-tl-2xl rounded-tr-sm rounded-bl-2xl rounded-br-2xl;
+  }
+  .sender-kono {
     @apply flex justify-start;
   }
-  .sender > p {
+  .sender-kono > p {
     @apply pt-2 pl-2 text-left text-white;
   }
-  .message {
+  .message-kono {
     @apply flex justify-start;
   }
-  .message > p {
+  .message-kono > p {
     @apply p-2 max-w-full inline-flex bg-white text-black break-all text-left rounded-tl-sm rounded-tr-2xl rounded-bl-2xl rounded-br-2xl;
   }
   .send-message {
@@ -73,7 +85,7 @@ export default defineComponent({
     @apply w-4/6 h-full border-r-4 border-l-4 text-center text-white bg-gray-900;
   }
   .send-button {
-    @apply w-1/6 h-full border-r-4 border-l-4 text-white font-bold
-           sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl bg-gray-800;
+    @apply w-1/6 h-full border-r-4 border-l-4 rounded-lg text-white font-bold
+           sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl;
   }
 </style>
