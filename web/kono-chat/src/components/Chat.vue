@@ -11,7 +11,8 @@
       </template>
     </div>
     <div class="send-message">
-      <input v-model="messageToSend"
+      <input v-model='messageToSend'
+             v-on:keydown.enter='buttonAction'
              class="send-input"
              placeholder="Type text.">
       <button v-on:click='buttonAction' class="send-button">
@@ -35,6 +36,7 @@ export default defineComponent({
       if (messageToSend.value) {
         store.dispatch('addUserMessage', messageToSend.value);
         store.dispatch('getKonoMessage', { route: 'test', message: messageToSend.value });
+        messageToSend.value = '';
       }
     };
 
