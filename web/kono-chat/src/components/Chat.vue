@@ -4,7 +4,7 @@
     </div>
     <div class="send-message">
       <input class="send-input" placeholder="Please enter the text you want to send to Kono-Sensei">
-      <button class="send-button">
+      <button v-on:click='buttonAction' class="send-button">
         <font>Send</font>
       </button>
     </div>
@@ -13,9 +13,22 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useStore } from 'vuex';
 
 export default defineComponent({
   name: 'Chat',
+  setup() {
+    const store = useStore();
+
+    const buttonAction = () => {
+      store.dispatch('getKonoMessage', 'Hello-World');
+      alert(store.getters.messageList[0].message);
+    };
+
+    return {
+      store, buttonAction,
+    };
+  },
 });
 </script>
 

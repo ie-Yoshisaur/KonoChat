@@ -22,7 +22,7 @@ export const store = createStore({
     addUserMessage({ commit }, message) {
       commit('addUserMessage', message);
     },
-    getMessage({ commit }, status) {
+    getKonoMessage({ commit }, status) {
       /* eslint-disable-next-line */
       axios.get('http://localhost:5000/' + status).then((response) => {
         commit('addKonoMessage', JSON.parse(JSON.stringify(response.data)).message);
