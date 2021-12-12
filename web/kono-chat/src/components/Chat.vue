@@ -3,7 +3,7 @@
     <div class="message-list">
     </div>
     <div class="send-message">
-      <input class="send-input" placeholder="Please input the sentence that you want to send to Kono-Sensei">
+      <input class="send-input" placeholder="Please enter the text you want to send to Kono-Sensei">
       <button class="send-button">
         <font>Send</font>
       </button>
