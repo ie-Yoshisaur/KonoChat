@@ -13,7 +13,7 @@
     <div class="send-message">
       <input v-model="messageToSend"
              class="send-input"
-             placeholder="Please enter the text you want to send to Kono-Sensei">
+             placeholder="Type text.">
       <button v-on:click='buttonAction' class="send-button">
         <font>Send</font>
       </button>
@@ -32,8 +32,10 @@ export default defineComponent({
     const messageToSend = ref<string>('');
 
     const buttonAction = () => {
-      store.dispatch('addUserMessage', messageToSend.value);
-      store.dispatch('getKonoMessage', { route: 'test', message: 'Hello, World!' });
+      if (messageToSend.value) {
+        store.dispatch('addUserMessage', messageToSend.value);
+        store.dispatch('getKonoMessage', { route: 'test', message: 'Hello, World!' });
+      }
     };
 
     return {
