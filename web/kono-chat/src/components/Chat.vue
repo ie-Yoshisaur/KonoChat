@@ -23,7 +23,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onUpdated, nextTick, } from 'vue';
+import {
+  defineComponent, ref, onUpdated, nextTick,
+} from 'vue';
 import { useStore } from 'vuex';
 
 export default defineComponent({
@@ -32,10 +34,10 @@ export default defineComponent({
     const store = useStore();
     const messageToSend = ref<string>('');
     const messageList = ref<HTMLImageElement>();
-    let messageListLength: number = 0;
+    let messageListLength = 0;
 
     const buttonAction = () => {
-      if (messageToSend.value) {
+      if (messageToSend.value !== '') {
         store.dispatch('addUserMessage', messageToSend.value);
         store.dispatch('getKonoMessage', { route: 'test', message: messageToSend.value });
         messageToSend.value = '';
@@ -45,7 +47,7 @@ export default defineComponent({
     onUpdated(() => {
       nextTick(() => {
         if (!messageList.value) return;
-        if (messageListLength.value != store.getters.messageList.length) {
+        if (messageListLength !== store.getters.messageList.length) {
           messageListLength = store.getters.messageList.length;
           messageList.value.scrollTop = messageList.value.scrollHeight;
         }
