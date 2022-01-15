@@ -32,7 +32,7 @@ export const store = createStore({
     },
     getKonoMessage({ commit }, status) {
       /* eslint-disable-next-line */
-      axios.post('http://localhost:5000/' + status.route, { message: status.message }).then((response) => {
+      axios.post('http://localhost/' + status.route, { message: status.message }).then((response) => {
         commit('addKonoMessage', JSON.parse(JSON.stringify(response.data)).message);
       });
     },
