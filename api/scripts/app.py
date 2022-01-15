@@ -15,6 +15,3 @@ def reply():
     message = request.json['message']
     reply = gpt2_model.generate_reply(message, device, tokenizer, model)
     return jsonify({'message': reply})
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
