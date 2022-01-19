@@ -11,13 +11,6 @@ services:
     tty: true
   api:
     build: ./api
-    container_name: api
-    networks:
-      nginx-api:
-        aliases:
-          - flask-app
-    ports:
-      - "5000:5000"
     volumes:
       - "./api/:/api"
     tty: true
@@ -26,11 +19,9 @@ services:
     container_name: nginx
     depends_on:
       - api
+    links:
+      - api
     volumes:
       - "./nginx/nginx.conf:/etc/nginx/conf.d/default.conf"
-    networks:
-      - nginx-api
     ports:
       - "80:80"
-networks:
-  nginx-api:
