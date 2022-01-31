@@ -1,11 +1,23 @@
 <template>
   <div class="credit">
-    <h1>This is a credit page</h1>
+    <MemberList />
+
   </div>
 </template>
 
 <script>
+import MemberList from '../components/MemberList.vue';
+
 export default {
   name: 'Credit',
+  components: {
+    MemberList,
+  },
 };
 </script>
+
+<style scoped>
+  .credit {
+    @apply h-5/6;
+  }
+</style>

@@ -1,6 +1,6 @@
 interface Message {
   sender : string,
-  message : stirng,
+  message : string,
 }
 
 export default Message
