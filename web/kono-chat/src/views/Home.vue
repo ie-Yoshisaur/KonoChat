@@ -1,10 +1,13 @@
 <template>
   <div class="container">
-		<div class="animate three">
-			<span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span> &nbsp; &nbsp; &nbsp;
-			<span>K</span><span>o</span><span>n</span><span>o</span><span>-</span><span>C</span><span>h</span><span>a</span><span>t</span>
-		</div>
-	</div>
+    <div class="animate three">
+      <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+      <br>
+      <span>T</span><span>o</span>
+      <br>
+      <span>K</span><span>o</span><span>n</span><span>o</span><span>-</span><span>C</span><span>h</span><span>a</span><span>t</span>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -125,33 +128,33 @@ export default defineComponent({
   }
 
 .three span {
-  font-size: 200px;
-	color: #26A69A;
-	opacity: 0;
-	transform: translate(-300px, 0) scale(0);
-	animation: sideSlide .5s forwards;
+  font-size: 10vw;
+  color: #26A69A;
+  opacity: 0;
+  transform: translate(-300px, 0) scale(0);
+  animation: sideSlide .5s forwards;
 }
 
 @keyframes sideSlide {
-	60% {
-		transform: translate(20px, 0) scale(1);
-		color: #26A69A;
-	}
+  60% {
+    transform: translate(20px, 0) scale(1);
+    color: #26A69A;
+  }
 
-	80% {
-		transform: translate(20px, 0) scale(1);
-		color: #26A69A;
-	}
+  80% {
+    transform: translate(20px, 0) scale(1);
+    color: #26A69A;
+  }
 
-	99% {
-		transform: translate(0) scale(1.2);
-		color: #00f0ff;
-	}
+  99% {
+    transform: translate(0) scale(1.2);
+    color: #00f0ff;
+  }
 
-	100% {
-		transform: translate(0) scale(1);
-		opacity: 1;
-		color: #26A69A;
-	}
+  100% {
+    transform: translate(0) scale(1);
+    opacity: 1;
+    color: #26A69A;
+  }
 }
 </style>
