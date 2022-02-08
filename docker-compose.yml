@@ -14,6 +14,7 @@ services:
     volumes:
       - "./api/:/api"
     tty: true
+    scale: 2
   nginx:
     build: ./nginx
     container_name: nginx
