@@ -1,4 +1,5 @@
 flask
+flask-cors
 gunicorn
 datasets==1.2.1
 protobuf

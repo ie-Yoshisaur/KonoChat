@@ -1,9 +1,11 @@
 from flask import Flask, jsonify
 from flask import request
+from flask_cors import CORS
 import gpt2_model
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
+CORS(app)
 
 device = gpt2_model.load_device()
 tokenizer = gpt2_model.generate_tokenizer()
