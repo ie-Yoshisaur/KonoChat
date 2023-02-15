@@ -39,7 +39,7 @@ export default defineComponent({
     const buttonAction = () => {
       if (messageToSend.value !== '') {
         store.dispatch('addUserMessage', messageToSend.value);
-        store.dispatch('getKonoMessage', { route: 'reply', message: messageToSend.value });
+        store.dispatch('getKonoMessage', messageToSend.value);
         messageToSend.value = '';
       }
     };

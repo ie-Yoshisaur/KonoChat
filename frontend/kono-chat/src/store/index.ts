@@ -2,6 +2,8 @@ import axios from 'axios';
 import { createStore } from 'vuex';
 import Message from '@/types/Message';
 
+axios.defaults.baseURL = process.env.VUE_APP_BASE_URL;
+
 export type State = { messageList: Message[] }
 
 const state: State = { messageList: [] };
@@ -30,9 +32,9 @@ export const store = createStore({
     addUserMessage({ commit }, message) {
       commit('addUserMessage', message);
     },
-    getKonoMessage({ commit }, status) {
+    getKonoMessage({ commit }, message) {
       /* eslint-disable-next-line */
-      axios.post('http://localhost/' + status.route, { message: status.message }).then((response) => {
+      axios.post('/api/reply', { message: message }).then((response) => {
         commit('addKonoMessage', JSON.parse(JSON.stringify(response.data)).message);
       });
     },
