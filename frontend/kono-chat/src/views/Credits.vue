@@ -1,5 +1,5 @@
 <template>
-  <div class="credit">
+  <div class="credits">
     <MemberList />
 
   </div>
@@ -9,7 +9,7 @@
 import MemberList from '../components/MemberList.vue';
 
 export default {
-  name: 'Credit',
+  name: 'Credits',
   components: {
     MemberList,
   },
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-  .credit {
+  .credits {
     @apply h-5/6;
   }
 </style>

@@ -13,14 +13,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/Kono-Chat.vue'),
   },
   {
-    path: '/credit',
-    name: 'credit',
-    component: () => import('../views/Credit.vue'),
+    path: '/credits',
+    name: 'credits',
+    component: () => import('../views/Credits.vue'),
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.NODE_ENV === 'production' ? '/~e205723/kono-chat/' : process.env.BASE_URL),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 
