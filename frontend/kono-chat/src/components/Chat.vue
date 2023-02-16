@@ -63,7 +63,7 @@ export default defineComponent({
 
 <style scoped>
   .chat {
-    @apply h-full w-full;
+    @apply h-5/6 w-full;
   }
   .message-list {
     @apply overflow-auto h-full w-5/6 container mx-auto
