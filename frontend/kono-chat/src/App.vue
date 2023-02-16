@@ -3,7 +3,7 @@
     <div class="nav" id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/kono-chat">Kono-Chat</router-link> |
-      <router-link to="/credit">Credit</router-link>
+      <router-link to="/credits">Credits</router-link>
     </div>
     <router-view/>
   </div>
